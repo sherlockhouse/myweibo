@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+* Copyright (C) 2015 Peter Cai
+*
+* This file is part of BlackLight
+*
+* BlackLight is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* BlackLight is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with BlackLight.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/drawer_wrapper"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:background="?attr/DrawerBackground"
+	android:clickable="true">
+
+	<RelativeLayout
+		android:id="@+id/drawer_group"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@+id/drawer_divider"/>
+	
+	<View
+		android:id="@id/drawer_divider"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_above="@+id/drawer_bottom"
+		android:background="?attr/DrawerForeground"
+		android:alpha="0.2"/>
+	
+	<RelativeLayout
+		android:id="@id/drawer_bottom"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true">
+		
+		<RelativeLayout
+			android:id="@+id/drawer_settings"
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			android:background="?android:attr/selectableItemBackground"
+			android:clickable="true">
+			
+			<info.papdt.blacklight.ui.common.TintImageView
+				android:id="@+id/set_icon"
+				android:layout_width="24dp"
+				android:layout_height="24dp"
+				android:layout_margin="16dp"
+				android:layout_centerVertical="true"
+				android:layout_alignParentLeft="true"
+				android:src="@drawable/ic_drawer_set"
+				android:scaleType="centerInside"
+				app:tintColor="?attr/DrawerForeground"/>
+			
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_marginLeft="16dp"
+				android:gravity="center_vertical"
+				android:layout_toRightOf="@id/set_icon"
+				android:text="@string/settings"
+				android:textColor="?attr/DrawerForeground"
+				android:textSize="15sp"/>
+			
+		</RelativeLayout>
+		
+		<RelativeLayout
+			android:id="@+id/drawer_multiuser"
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			android:background="?android:attr/selectableItemBackground"
+			android:clickable="true"
+			android:visibility="gone">
+
+			<info.papdt.blacklight.ui.common.TintImageView
+				android:id="@+id/muser_icon"
+				android:layout_width="24dp"
+				android:layout_height="24dp"
+				android:layout_margin="16dp"
+				android:layout_centerVertical="true"
+				android:layout_alignParentLeft="true"
+				android:src="@drawable/ic_action_new"
+				android:scaleType="centerInside"
+				app:tintColor="?attr/DrawerForeground"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_marginLeft="16dp"
+				android:gravity="center_vertical"
+				android:layout_toRightOf="@+id/muser_icon"
+				android:text="@string/add"
+				android:textColor="?attr/DrawerForeground"
+				android:textSize="15sp"/>
+
+		</RelativeLayout>
+		
+	</RelativeLayout>
+		
+</RelativeLayout>
